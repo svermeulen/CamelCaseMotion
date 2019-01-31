@@ -154,7 +154,7 @@ function! s:CreateMotionMappings()
     "	  *map <silent> ,? <Plug>CamelCaseMotion_?
     " endif
 
-    for l:mode in ['n', 'o', 'v']
+    for l:mode in ['n', 'o', 'x']
 	for l:motion in ['w', 'b', 'e']
 	    let l:targetMapping = '<Plug>CamelCaseMotion_' . l:motion
 	    execute l:mode . 'noremap ' . l:targetMapping . ' :<C-U>call camelcasemotion#Motion(''' . l:motion . ''',v:count1,''' . l:mode . ''')<CR>'
@@ -181,7 +181,7 @@ function! s:CreateInnerMotionMappings()
     "	  *map <silent> i,? <Plug>CamelCaseInnerMotion_i?
     " endif
 
-    for l:mode in ['o', 'v']
+    for l:mode in ['o', 'x']
 	for l:motion in ['w', 'b', 'e']
 	    let l:targetMapping = '<Plug>CamelCaseMotion_i' . l:motion
 	    execute l:mode . 'noremap ' . l:targetMapping . ' :<C-U>call camelcasemotion#InnerMotion(''' . l:motion . ''',v:count1)<CR>'
